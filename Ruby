@@ -1,0 +1,84 @@
+
+Exercice 2.1: Bonjour monde
+ruby
+
+puts "Bonjour, monde !"
+Exercice 2.2: Un programme qui dit bonjour
+ruby
+
+print "Entrez votre prénom : " prenom = gets.chomp puts "Bonjour, #{prenom} !"
+Exercice 2.3: Un programme qui calcule des âges
+ruby
+
+print "Entrez votre année de naissance : " annee_naissance = gets.chomp.to_i age = 2017 - annee_naissance puts "En 2017, vous aviez #{age} ans."
+
+Exercice 2.4: Un programme centenaire
+ruby
+
+print "Entrez votre année de naissance : " annee_naissance = gets.chomp.to_i annee_centenaire = annee_naissance + 100 puts "Vous aurez 100 ans en #{annee_centenaire}."
+
+Exercice 2.5: Un programme qui répète
+ruby
+
+print "Entrez un nombre : " nombre = gets.chomp.to_i nombre.times do puts "Salut, ça farte ?" end
+
+Exercice 2.6: Un programme qui répète (bis)
+ruby
+
+print "Entrez un nombre : " nombre = gets.chomp.to_i (nombre - 1).times do puts "Bonjour toi !" end
+
+Exercice 2.7: Compter
+ruby
+
+print "Entrez un nombre : " nombre = gets.chomp.to_i 1.upto(nombre) do |i| puts i end
+
+Exercice 2.8: Compte à rebours
+ruby
+
+print "Entrez un nombre : " nombre = gets.chomp.to_i nombre.downto(0) do |i| puts i end
+
+Exercice 2.9: Afficher les années
+ruby
+
+print "année de naissance : " annee_naissance = gets.chomp.to_i annee_actuelle = Time.now.year (annee_naissance..annee_actuelle).each do |annee| puts annee end
+
+Exercice 2.10: Afficher tous les âges
+ruby
+
+print "année de naissance : " annee_naissance = gets.chomp.to_i annee_actuelle = Time.now.year (annee_naissance..annee_actuelle).each do |annee| age = annee - annee_naissance puts "En #{annee}, vous aviez #{age} an(s)." end
+
+Exercice 2.11:  les années
+ruby
+
+print "âge : " age = gets.chomp.to_i annee_actuelle = Time.now.year (annee_actuelle - age..annee_actuelle).each do |annee| annees_ecoulees = annee_actuelle - annee age_actuel = age - annees_ecoulees if age_actuel == annees_ecoulees puts "Il y a #{annees_ecoulees} an(s), tu avais la moitié de l'âge que tu as aujourd'hui." else puts "Il y a #{annees_ecoulees} an(s), tu avais #{age_actuel} an(s)." end end
+
+Exercice 2.12: Annoncer l'âge, option BG
+ruby
+
+print "Entrez votre âge : " age = gets.chomp.to_i annee_actuelle = Time.now.year (annee_actuelle - age..annee_actuelle).each do |annee| annees_ecoulees = annee_actuelle - annee age_actuel = age - annees_ecoulees if age_actuel == annees_ecoulees puts "Il y a #{annees_ecoulees} an(s), tu avais la moitié de l'âge que tu as aujourd'hui." else puts "Il y a #{annees_ecoulees} an(s), tu avais #{age_actuel} an(s)." end end
+
+Exercice 2.13: Une liste d'email
+ruby
+
+emails = [] 50.times do |i| index = format('%02d', i+1) email = "jean.dupont.#{index}@email.fr" emails << email end puts emails
+
+Exercice 2.14: Afficher les bons emails
+ruby
+
+emails.each do |email| if email.split('.')[1].to_i.even? puts email end end
+
+Exercice 2.15: La pyramide (descendante)
+ruby
+
+print "Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? " nb_etages = gets.chomp.to_i nb_etages.times do |i| puts '#' * (i + 1) end
+
+Exercice 2.16: La pyramide (montante)
+ruby
+
+print "Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? " nb_etages = gets.chomp.to_i nb_etages.times do |i| spaces = ' ' * (nb_etages - i - 1) puts spaces + '#' * (i + 1) end
+
+Exercice 2.17: La pyramide, version expert
+ruby
+
+print "Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? " nb_etages = gets.chomp.to_i nb_etages.times do |i| spaces = ' ' * (nb_etages - i - 1) pyramid = '#' * (2 * i + 1) puts spaces + pyramid + spaces end
+
