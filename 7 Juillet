@@ -1,0 +1,39 @@
+handles = ["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau","@gaellombart","@bendarag","@AurelieLebelle","@julienduffe","@thomaspoupeau","@LilyRossignol","@ClairGuedon","@stephanieauguy","@claw_prolongeau","@_JulieMenard","@LColcomb","@Zlauwereys"]
+handles = ["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau","@gaellombart","@bendarag","@AurelieLebelle","@julienduffe","@thomaspoupeau","@LilyRossignol","@ClairGuedon","@stephanieauguy","@claw_prolongeau","@_JulieMenard","@LColcomb","@Zlauwereys"]
+
+# Combien y a-t-il de handle dans cette array ?
+nombre_handles = handles.length
+puts "Il y a #{nombre_handles} handles dans cette array."
+
+# Quel est le handle le plus court de cette liste ?
+handle_plus_court = handles.min_by { |handle| handle.length }
+puts "Le handle le plus court est : #{handle_plus_court}"
+
+# Combien y a-t-il de handle contenant 5 caractères (le @ ne compte pas pour un caractère) ?
+handles_5_caracteres = handles.count { |handle| handle.length - 1 == 5 }
+puts "Il y a #{handles_5_caracteres} handles contenant 5 caractères."
+
+# Combien commencent par une majuscule (première lettre juste après le @) ?
+handles_majuscule = handles.count { |handle| handle[1].match?(/[A-Z]/) }
+puts "Il y a #{handles_majuscule} handles commençant par une majuscule."
+
+# Trie la liste de handle par ordre alphabétique.
+handles_tries_alphabetique = handles.sort
+puts "Liste des handles triés par ordre alphabétique :"
+puts handles_tries_alphabetique
+
+# Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)
+handles_tries_taille = handles.sort_by { |handle| handle.length }
+puts "Liste des handles triés par taille des handles :"
+puts handles_tries_taille
+
+# Quelle est la position dans l'array de la personne @epenser ?
+position_epenser = handles.index("@epenser")
+puts "La position de @epenser dans l'array est #{position_epenser}"
+
+# Répartition des handles par taille de ces derniers
+repartition_taille_handles = handles.group_by { |handle| handle.length - 1 }
+repartition_taille_handles.each do |taille, liste_handles|
+  puts "Nombre de handles avec #{taille} caractère(s) : #{liste_handles.length}"
+end
+
